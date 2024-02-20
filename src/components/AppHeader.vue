@@ -1,8 +1,8 @@
 <template lang="">
-    <header>
-        <div>
-            header
-        </div>
+    <header class="text-center">
+       <h1>
+        Projects
+       </h1>
     </header>
 </template>
 <script>

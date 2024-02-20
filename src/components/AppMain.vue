@@ -6,7 +6,7 @@
                     I miei progetti:
                 </h1>
                 <ul>
-                    <li v-for="projects in project">
+                    <li v-for="project in projects" :key="project.id">
                         {{ project.name_project }}
                     </li>
                 </ul>
@@ -37,7 +37,7 @@ export default {
             })
             .then((response)=> {
                 console.log(response.data.result.data);
-                this.projects = response.data.result.data
+                this.projects = response.data.result.data;
             })
             .catch(function (error) {
                 console.warn(error);
