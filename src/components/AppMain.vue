@@ -5,6 +5,11 @@
                 <h1>
                     I miei progetti:
                 </h1>
+                <ul>
+                    <li v-for="projects in project">
+                        {{ project.name_project }}
+                    </li>
+                </ul>
             </div>
 
         </section>
@@ -18,7 +23,9 @@ export default {
     name: 'AppMain',
 
     data() {
-
+        return {
+            projects:[],
+        }
     },
 
     methods:{
@@ -28,8 +35,9 @@ export default {
                 
                 }
             })
-            .then(function (response) {
-                console.log(response);
+            .then((response)=> {
+                console.log(response.data.result.data);
+                this.projects = response.data.result.data
             })
             .catch(function (error) {
                 console.warn(error);
