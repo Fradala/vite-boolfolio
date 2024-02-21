@@ -1,19 +1,24 @@
 <template lang="">
     <main class="container">
-        <section class=row>
+        <section class="row justify-content-center">
             <div class="col-12">
-                <h1>
-                    I miei progetti:
+                <h1 class="mt-4 mb-4">
+                    Projects
                 </h1>
-                <ul>
-                    <li v-for="project in projects" :key="project.id">
-                        {{ project.name_project }}
-                    </li>
-                </ul>
+            </div>
+            <div class="card p-0 col-3 me-4" v-for="project in projects" :key="project.id" >
+                <img :src="project.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.name_project }}</h5>
+                    <p>
+                        {{ project.author }}
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
             </div>
 
         </section>
-        
+
     </main>
 </template>
 <script>
