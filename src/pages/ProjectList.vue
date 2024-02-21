@@ -42,6 +42,7 @@ export default {
             })
             .catch(function (error) {
                 console.warn(error);
+                this.$router.push({ name: 'not-found' })
             })
             
         }
