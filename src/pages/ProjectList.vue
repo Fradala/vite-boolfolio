@@ -6,22 +6,18 @@
                     Projects
                 </h1>
             </div>
-            <div class="card p-0 col-3 me-4" v-for="project in projects" :key="project.id" >
-                <img :src="project.image" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ project.name_project }}</h5>
-                    <p>
-                        {{ project.author }}
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            
+            <SingleCard class="card p-0 col-3 me-4" v-for="project in projects" :key="project.id"
+                :title="project.name_project" :image="project.image" :author="project.author"
+            />
+            
 
         </section>
 
     </main>
 </template>
 <script>
+import SingleCard from '@/components/SingleCard.vue';
 import axios from 'axios';
 
 export default {
@@ -49,6 +45,9 @@ export default {
             })
             
         }
+    },
+    components:{
+        SingleCard
     },
 
     created() {
